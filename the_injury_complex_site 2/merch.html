@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020304">
+  <meta name="description" content="INJURY merch — We Were Astronauts.">
+  <title>INJURY — Merch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="merch-page">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar merch-topbar">
+    <a class="logo" href="index.html#home" aria-label="INJURY home">
+      <img src="assets/injury_logo.png" alt="INJURY — We Were Astronauts">
+    </a>
+
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">MENU</button>
+
+    <nav id="nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#music">Music</a>
+      <a href="index.html#videos">Videos</a>
+      <a href="index.html#lyrics">Lyrics</a>
+      <a href="index.html#about">About</a>
+      <a class="active" href="merch.html">Merch</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="socials" aria-label="social links">
+      <a href="#" aria-label="Spotify">●</a>
+      <a href="#" aria-label="YouTube">▶</a>
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="Email">✉</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="merch-hero">
+      <div class="merch-stars" aria-hidden="true"></div>
+      <div class="merch-lockup-wrap">
+        <img class="merch-lockup" src="assets/merch_lockup.png" alt="INJURY We Were Astronauts astronaut merch logo">
+      </div>
+      <div class="merch-hero-copy">
+        <p class="kicker">// OFFICIAL MERCH</p>
+        <h1>TAKE AN<br>INJURY HOME.</h1>
+        <div class="rainbow-rule" aria-hidden="true"></div>
+        <p>ASTRO HAS ESCAPED THE VISOR.<br>SHIRTS. HOODIES. HATS. STICKERS.</p>
+        <span class="coming-pill">COMING SOON</span>
+      </div>
+    </section>
+
+    <section class="merch-showcase section-wrap">
+      <div class="section-title">
+        <div><span class="radio">◉</span> FIELD EQUIPMENT</div>
+        <span>DROP 001</span>
+      </div>
+
+      <figure class="merch-board">
+        <img src="assets/merch_mockups.png" alt="INJURY astronaut shirt hoodie hat and sticker mockups">
+      </figure>
+
+      <div class="merch-items" aria-label="planned merch items">
+        <article><span>01</span><h2>ASTRONAUT T-SHIRT</h2><p>BLACK / FRONT PRINT</p><b>COMING SOON</b></article>
+        <article><span>02</span><h2>ASTRONAUT HOODIE</h2><p>BLACK / FRONT PRINT</p><b>COMING SOON</b></article>
+        <article><span>03</span><h2>ASTRONAUT HAT</h2><p>EMBROIDERED ASTRO</p><b>COMING SOON</b></article>
+        <article><span>04</span><h2>ASTRONAUT STICKER</h2><p>MATTE VINYL / DIE-CUT</p><b>COMING SOON</b></article>
+      </div>
+    </section>
+
+    <section class="merch-signal">
+      <div>
+        <p class="kicker">// BE THE FIRST TO KNOW</p>
+        <h2>NEW MERCH.<br>NEW MUSIC.<br>NO SPAM.</h2>
+      </div>
+      <form class="signup merch-signup" onsubmit="event.preventDefault(); document.querySelector('.signup-note').textContent='Transmission received.';">
+        <input type="email" required placeholder="YOUR EMAIL" aria-label="Email address">
+        <button type="submit">SIGN ME UP</button>
+      </form>
+      <p class="signup-note" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 INJURY</span>
+    <span class="footer-tag">WE WERE ASTRONAUTS.</span>
+    <div>
+      <a href="index.html">HOME</a>
+      <a href="index.html#contact">CONTACT</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

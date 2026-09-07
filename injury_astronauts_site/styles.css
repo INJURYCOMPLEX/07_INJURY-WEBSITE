@@ -1,0 +1,207 @@
+
+:root{
+  --bg:#05070a;
+  --panel:#0a0f14;
+  --ink:#f3f0e8;
+  --muted:#8b96a3;
+  --line:rgba(255,255,255,.14);
+  --blue:#7ec8ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Inter,system-ui,sans-serif;overflow-x:hidden
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.08;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.stars{
+  position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(255,255,255,.9) 0 1px,transparent 1.4px),
+    radial-gradient(circle at 80% 35%,rgba(255,255,255,.5) 0 1px,transparent 1.4px),
+    radial-gradient(circle at 35% 75%,rgba(255,255,255,.6) 0 1px,transparent 1.4px);
+  background-size:170px 170px,230px 230px,290px 290px;
+  opacity:.35
+}
+header{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 4vw;
+  background:linear-gradient(to bottom,rgba(5,7,10,.92),rgba(5,7,10,0));
+}
+.brand{
+  font-family:"Space Grotesk";font-weight:700;letter-spacing:.12em;
+  text-decoration:none;color:var(--ink);font-size:1rem
+}
+nav{display:flex;gap:28px}
+nav a,.menu{
+  color:var(--ink);text-decoration:none;
+  font:500 .7rem "DM Mono";letter-spacing:.12em;text-transform:uppercase
+}
+.menu{display:none;background:none;border:0}
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  padding:9vw 4vw 7vw;overflow:hidden;border-bottom:1px solid var(--line)
+}
+.hero-copy{position:relative;z-index:5}
+.signal{font:500 .68rem "DM Mono";letter-spacing:.16em;color:var(--muted)}
+.hero h1{
+  margin:.05em 0;font:600 clamp(5rem,16vw,14rem)/.75 "Space Grotesk";
+  letter-spacing:-.08em
+}
+.tagline{font-size:clamp(1rem,1.8vw,1.5rem);color:#cbd2d8}
+.text-link{
+  display:inline-block;margin-top:28px;color:var(--ink);text-decoration:none;
+  font:500 .72rem "DM Mono";letter-spacing:.12em
+}
+.earth{
+  position:absolute;width:min(78vw,980px);height:min(78vw,980px);
+  right:-18vw;bottom:-40vw;border-radius:50%;
+  background:
+    radial-gradient(circle at 35% 30%,rgba(255,255,255,.22),transparent 20%),
+    radial-gradient(circle at 65% 45%,rgba(88,136,118,.6),transparent 20%),
+    radial-gradient(circle at 40% 60%,rgba(65,103,143,.65),transparent 25%),
+    linear-gradient(145deg,#27465a,#0c2435 55%,#06121c);
+  box-shadow:
+    0 0 80px rgba(110,190,255,.18),
+    inset -80px -90px 140px rgba(0,0,0,.65)
+}
+.orbit{
+  position:absolute;border:1px solid rgba(255,255,255,.09);border-radius:50%
+}
+.orbit-a{width:74vw;height:28vw;right:-6vw;top:21vh;transform:rotate(-18deg)}
+.orbit-b{width:44vw;height:44vw;right:8vw;top:15vh}
+.astronaut{
+  position:absolute;right:16vw;top:24vh;width:170px;height:270px;
+  transform:rotate(12deg);animation:float 7s ease-in-out infinite
+}
+@keyframes float{50%{transform:translateY(-20px) rotate(8deg)}}
+.helmet{
+  position:absolute;top:0;left:34px;width:110px;height:110px;border:8px solid #d9dde1;border-radius:50%;
+  background:#e8e8e5
+}
+.visor{
+  position:absolute;inset:12px;border-radius:50%;background:#080b0f;
+  display:grid;place-items:center;border:3px solid #9fa8b1
+}
+.face{font-size:3.4rem;color:#f6f3e9;font-family:Arial}
+.torso{
+  position:absolute;top:98px;left:43px;width:95px;height:105px;border-radius:30px 30px 24px 24px;
+  background:linear-gradient(#e4e5e2,#b7bec4);border:5px solid #eff1ef
+}
+.arm,.leg{position:absolute;background:#c8ced2;border:5px solid #edf0ef;border-radius:30px}
+.arm{width:34px;height:110px;top:105px}
+.arm-l{left:18px;transform:rotate(28deg)}
+.arm-r{right:1px;transform:rotate(-34deg)}
+.leg{width:38px;height:105px;top:186px}
+.leg-l{left:49px;transform:rotate(8deg)}
+.leg-r{right:31px;transform:rotate(-12deg)}
+
+.feature{
+  min-height:95vh;display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--line)
+}
+.feature-copy,.feature-visual{padding:8vw 5vw}
+.feature-copy{display:flex;flex-direction:column;justify-content:center}
+.feature h2,.section-head h2,.listen h2{
+  margin:.15em 0;font:600 clamp(4rem,8vw,8rem)/.82 "Space Grotesk";
+  letter-spacing:-.07em
+}
+.lede{max-width:620px;color:#c8cfd6;font-size:1.15rem;line-height:1.7}
+.cta-row{display:flex;gap:12px;margin-top:28px}
+.button{
+  padding:12px 16px;border:1px solid var(--ink);text-decoration:none;color:var(--bg);
+  background:var(--ink);font:500 .7rem "DM Mono";letter-spacing:.12em
+}
+.button.ghost{background:transparent;color:var(--ink)}
+.disabled{opacity:.5;pointer-events:none}
+.feature-visual{
+  position:relative;overflow:hidden;background:
+    radial-gradient(circle at 50% 45%,rgba(90,146,187,.1),transparent 35%),
+    #070b10;border-left:1px solid var(--line)
+}
+.moon{
+  position:absolute;width:46vw;height:46vw;max-width:700px;max-height:700px;
+  right:-15vw;bottom:-18vw;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#d5d7d7,#8c949c 45%,#555d65 70%,#2c3238);
+  box-shadow:inset -90px -100px 120px rgba(0,0,0,.55)
+}
+.small-astro{
+  position:absolute;left:22%;top:34%;width:90px;height:150px;transform:rotate(-14deg)
+}
+.small-helmet{
+  width:72px;height:72px;border-radius:50%;background:#d9dde1;border:5px solid #eee;
+  display:grid;place-items:center
+}
+.small-helmet span{
+  width:52px;height:52px;border-radius:50%;background:#06090d;color:#fff;display:grid;place-items:center;
+  font-size:2.2rem
+}
+.small-body{width:58px;height:72px;background:#cfd5d9;border-radius:18px;margin:0 auto}
+.caption{
+  position:absolute;left:7%;bottom:7%;
+  font:400 .75rem "DM Mono";letter-spacing:.1em;color:#9fa9b3
+}
+.releases{padding:8vw 4vw;border-bottom:1px solid var(--line)}
+.release-list{margin-top:38px;border-top:1px solid var(--line)}
+.release{
+  display:grid;grid-template-columns:80px 1fr 30px;align-items:center;
+  gap:20px;padding:28px 0;border-bottom:1px solid var(--line);
+  transition:.2s ease
+}
+.release:hover{padding-left:12px}
+.release .num{font:400 .68rem "DM Mono";color:var(--muted)}
+.release h3{margin:0;font:500 clamp(1.3rem,2vw,2rem) "Space Grotesk";letter-spacing:-.03em}
+.release p{margin:.35em 0 0;color:var(--muted);font:400 .72rem "DM Mono"}
+.arrow{font-size:1.2rem}
+.interlude{
+  min-height:65vh;display:flex;flex-direction:column;justify-content:center;
+  padding:8vw 4vw;border-bottom:1px solid var(--line)
+}
+.interlude p{
+  margin:0;font:600 clamp(3rem,9vw,9rem)/.9 "Space Grotesk";letter-spacing:-.07em
+}
+.interlude .faint{color:#222a32}
+.about{
+  display:grid;grid-template-columns:1fr 1fr;gap:8vw;
+  padding:8vw 4vw;border-bottom:1px solid var(--line)
+}
+.about-copy{font-size:1.25rem;line-height:1.75;color:#c8cfd6;padding-top:40px}
+.listen{padding:8vw 4vw}
+.platforms{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:32px}
+.platforms a{
+  min-width:220px;flex:1;padding:22px 12px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  color:var(--ink);text-decoration:none;font:500 .78rem "DM Mono";letter-spacing:.1em
+}
+.platforms a:hover{background:#fff;color:#05070a}
+.note{font:400 .68rem/1.5 "DM Mono";color:var(--muted);margin-top:18px}
+footer{
+  display:flex;justify-content:space-between;padding:24px 4vw;border-top:1px solid var(--line);
+  font:400 .65rem "DM Mono";color:var(--muted)
+}
+@media(max-width:800px){
+  nav{
+    display:none;position:absolute;top:58px;left:4vw;right:4vw;padding:18px;
+    background:#0a0f14;border:1px solid var(--line);flex-direction:column
+  }
+  nav.open{display:flex}.menu{display:block}
+  .astronaut{right:4vw;top:19vh;transform:scale(.82) rotate(12deg)}
+  .earth{width:130vw;height:130vw;right:-60vw;bottom:-35vw}
+  .feature,.about{grid-template-columns:1fr}
+  .feature-visual{min-height:70vh;border-left:0;border-top:1px solid var(--line)}
+  .feature h2,.section-head h2,.listen h2{font-size:14vw}
+  .release{grid-template-columns:50px 1fr 24px}
+}
+@media(max-width:520px){
+  .hero{padding-top:25vh}
+  .hero h1{font-size:23vw}
+  .tagline{max-width:230px}
+  .astronaut{right:-6vw;top:19vh;transform:scale(.68) rotate(12deg)}
+  .feature-copy,.feature-visual{padding:18vw 6vw}
+  .about{padding:18vw 6vw}
+  .releases,.listen{padding:18vw 6vw}
+  footer{flex-direction:column;gap:8px}
+}
